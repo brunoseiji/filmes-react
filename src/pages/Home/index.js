@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import './home.css';
 
 class Home extends Component {
 
@@ -18,7 +20,7 @@ class Home extends Component {
     loadFilmes(){
         let url = 'https://sujeitoprogramador.com/r-api/?api=filmes';
         fetch(url)
-        .then((r) => r.json())
+        .then((res) => res.json())
         .then((json) => {
             this.setState({filmes: json});
             console.log(json);
@@ -28,8 +30,18 @@ class Home extends Component {
 
     render() {
         return(
-            <div>
-                
+            <div className="container">
+                <div className="lista-filmes">
+                    {this.state.filmes.map((filme) => {
+                        return(
+                            <article className="filme" key={filme.id}>
+                                <strong>{filme.nome}</strong>
+                                <img src={filme.foto} alt={filme.nome}/>
+                                <Link to="/">Acessar</Link>
+                            </article>
+                        )
+                    })}
+                </div>
             </div>
         )
     }

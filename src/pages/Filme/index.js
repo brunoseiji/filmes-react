@@ -25,7 +25,7 @@ class Filme extends Component {
         return(
             <div className="filme-info">
                 <h1>{this.state.filme.nome}</h1>
-                <img src={this.state.filme.foto}/>
+                <img src={this.state.filme.foto} alt={this.state.filme.nome}/>
                 {this.state.filme.length !== 0 && 
                     <h3>Sinopse</h3>
                 }

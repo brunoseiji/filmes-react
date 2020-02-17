@@ -23,7 +23,6 @@ class Home extends Component {
         .then((res) => res.json())
         .then((json) => {
             this.setState({filmes: json});
-            console.log(json);
         });
     
       }

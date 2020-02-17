@@ -2,8 +2,18 @@
     display: flex;
     flex-direction: column;
     max-width: 900px;
+    color: #ababab;
+    background-color: #1d1d1d;
+    padding: 35px 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.filme-info h1, .filme-info h3 {
+    color: #fff;
 }
 
 .filme-info img {
     border-radius: 5px;
+    margin: 0 auto;
 }
